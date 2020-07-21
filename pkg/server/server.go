@@ -109,6 +109,7 @@ func (s *Server) init(cfg *Config) error {
 	if s.isInitialized {
 		return nil
 	}
+	s.isInitialized = true
 
 	s.loadConfiguration()
 	s.writePIDFile()

@@ -20,7 +20,7 @@ import (
 // POST /api/ds/query   DataSource query w/ expressions
 func (hs *HTTPServer) QueryMetricsV2(c *models.ReqContext, reqDto dtos.MetricRequest) Response {
 	if len(reqDto.Queries) == 0 {
-		return Error(500, "No queries found in query", nil)
+		return Error(400, "No queries found in query", nil)
 	}
 
 	request := &tsdb.TsdbQuery{
